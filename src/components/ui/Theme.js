@@ -1,19 +1,29 @@
 import { createMuiTheme } from "@material-ui/core/styles";
 
 const arcGreen = "#015249";
+const arcYellow = "#9E8009";
 
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: "#000000"
+      main: `${arcGreen}`
     },
     secondary: {
-      main: `${arcGreen}`
+      main: `${arcYellow}`
     }
   },
   typography: {
-    h3: {
-      fontWeight: 300
+    tab: {
+      fontFamily: "Raleway",
+      textTransform: "none",
+      fontWeight: 700,
+      fontSize: "1rem"
+    },
+    login: {
+      fontFamily: "Pacifico",
+      fontSize: "1rem",
+      textTransform: "none",
+      color: "white"
     }
   }
 });
