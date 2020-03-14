@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import { makeStyles } from "@material-ui/styles";
@@ -42,6 +42,8 @@ export default function Header(props) {
     setValue(value);
   };
 
+  useEffect(() => {});
+
   return (
     <>
       <AppBar position="fixed" color="primary">
@@ -79,6 +81,8 @@ export default function Header(props) {
           </Tabs>
           <Button
             variant="contained"
+            component={Link}
+            to="/login"
             color="secondary"
             className={classes.button}
           >

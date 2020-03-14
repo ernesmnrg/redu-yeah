@@ -54,6 +54,16 @@ export default class LandingPage extends Component {
               path="/video"
               component={() => <div>Video</div>}
             ></Route>
+            <Route
+              exact
+              path="/login"
+              component={() => <div>Login</div>}
+            ></Route>
+            <Route
+              exact
+              path="/signup"
+              component={() => <div>Sign up</div>}
+            ></Route>
           </Switch>
         </BrowserRouter>
         Landing page
