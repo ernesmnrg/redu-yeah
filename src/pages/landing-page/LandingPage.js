@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link, BrowserRouter, Route, Switch } from "react-router-dom";
 import Header from "../../components/ui/Header";
+import Footer from "../../components/ui/Footer";
 
 export default class LandingPage extends Component {
   render() {
@@ -12,7 +13,9 @@ export default class LandingPage extends Component {
             <Route
               exact
               path="/"
-              component={() => <div>This is HOME</div>}
+              component={() => (
+                <div style={{ height: "2000px" }}>This is HOME</div>
+              )}
             ></Route>
             <Route
               exact
@@ -65,9 +68,10 @@ export default class LandingPage extends Component {
               component={() => <div>Sign up</div>}
             ></Route>
           </Switch>
+          Landing page
+          <Link to="/admin"> to admin</Link>
+          <Footer />
         </BrowserRouter>
-        Landing page
-        <Link to="/admin"> to admin</Link>
       </div>
     );
   }
