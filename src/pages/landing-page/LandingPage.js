@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import { Link, BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Header from "../../components/ui/Header";
+import HomePage from "../../components/HomePage";
 import Footer from "../../components/ui/Footer";
 
 export default class LandingPage extends Component {
@@ -14,7 +15,9 @@ export default class LandingPage extends Component {
               exact
               path="/"
               component={() => (
-                <div style={{ height: "2000px" }}>This is HOME</div>
+                <div style={{ height: "2000px" }}>
+                  <HomePage />
+                </div>
               )}
             ></Route>
             <Route
@@ -68,8 +71,8 @@ export default class LandingPage extends Component {
               component={() => <div>Sign up</div>}
             ></Route>
           </Switch>
-          Landing page
-          <Link to="/admin"> to admin</Link>
+          {/* Landing page
+          <Link to="/admin"> to admin</Link> */}
           <Footer />
         </BrowserRouter>
       </div>
