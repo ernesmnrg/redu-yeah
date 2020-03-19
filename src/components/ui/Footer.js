@@ -34,7 +34,7 @@ const useStyles = makeStyles(theme => ({
   },
   socialContainer: {
     position: "absolute",
-    marginTop: "-6em"
+    backgroundColor: theme.palette.primary.main
   }
 }));
 
@@ -130,6 +130,7 @@ export default function Footer() {
         <Grid
           item
           component={"a"}
+          spacing={2}
           href="http://www.facebook.com"
           target="_blank"
         >
@@ -139,6 +140,7 @@ export default function Footer() {
           item
           component={"a"}
           href="http://www.twitter.com"
+          spacing={2}
           target="_blank"
         >
           <img alt="twitter icon" src={twitter} className={classes.icon} />
@@ -148,6 +150,7 @@ export default function Footer() {
           component={"a"}
           href="http://www.instagram.com"
           target="_blank"
+          spacing={2}
         >
           <img alt="instagram icon" src={instagram} />
         </Grid>

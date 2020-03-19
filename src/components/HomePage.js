@@ -11,6 +11,7 @@ import howImage from "../assets/question.png";
 import "../components/ui/Theme";
 import googlePlay from "../assets/gooleplay.png";
 import repeatingBackground from "../assets/repeatingBackground.svg";
+import background from "../assets/danautoba_1.jpg";
 
 const useStyles = makeStyles(theme => ({
   estimateButton: {
@@ -50,11 +51,20 @@ const useStyles = makeStyles(theme => ({
     fontFamily: "Pacifico",
     color: theme.palette.primary.main
   },
+  specialText2: {
+    fontFamily: "Pacifico",
+    color: theme.palette.common.orange
+  },
   subtitle: {
+    ...theme.subtitle1,
     marginBottom: "1em"
   },
   icon: {
     marginRight: "2em"
+  },
+  iconGP: {
+    width: "50%",
+    marginLeft: "1em"
   },
   howToContainer: {
     marginTop: "10em"
@@ -72,6 +82,39 @@ const useStyles = makeStyles(theme => ({
     boxShadow: theme.shadows[10],
     borderRadius: 15,
     padding: "10em"
+  },
+  background: {
+    backgroundPosition: "center",
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    height: "50%",
+    width: "100%",
+    backgroundImage: `url(${background})`
+  },
+  h2: {
+    fontFamily: "Raleway",
+    fontWeight: 400,
+    fontSize: "2.5rem",
+    color: theme.palette.primary.main,
+    lineHeight: 1.5
+  },
+  h22: {
+    fontFamily: "Raleway",
+    fontWeight: 700,
+    fontSize: "2.5rem",
+    color: theme.palette.primary.main,
+    lineHeight: 1.5
+  },
+  h4: {
+    fontFamily: "Raleway",
+    fontSize: "1.75rem",
+    color: theme.palette.primary.main,
+    fontWeight: 700
+  },
+  subtitle1: {
+    fontSize: "1.25rem",
+    fontWeight: 300,
+    color: theme.palette.secondary.main
   }
 }));
 
@@ -85,7 +128,7 @@ export default function HomePage() {
       <Grid item>
         <Grid container justify="flex-end" alignItems="center" direction="row">
           <Grid item>
-            <Typography variant="h2" align="center">
+            <Typography className={classes.h2} align="center">
               Media Berbagi Pengalaman <br />{" "}
               <span className={classes.specialText}>Wisata Edukasi</span>
             </Typography>
@@ -132,25 +175,27 @@ export default function HomePage() {
         {" "}
         {/*How to use Redu */}
         <Grid container direction="row" className={classes.howToContainer}>
-          <Grid item style={{ marginLeft: "5em" }}>
+          <Grid item style={{ marginLeft: "3m" }}>
             <img src={howImage} alt="how" className={classes.icon} />
           </Grid>
           <Grid>
-            <Typography variant="h4">Bagaimana menggunakan REDU</Typography>
-            <Typography variant="subtitle1" className={classes.subtitle}>
+            <Typography className={classes.h4}>
+              Bagaimana menggunakan REDU
+            </Typography>
+            <Typography className={classes.subtitle}>
               Panduan singkat menggunakan aplikasi Redu
             </Typography>
-            <Typography variant="subtitle1">
+            <Typography className={classes.subtitle1}>
               1. Unduh Aplikasi REDU di Google Play Store
             </Typography>
-            <Typography variant="subtitle1">
+            <Typography className={classes.subtitle1}>
               2. Ceritakan dan bagikan pengalaman kamu selama melakukan wisata
               edukasi
             </Typography>
-            <Typography variant="subtitle1">
+            <Typography className={classes.subtitle1}>
               3. Cari referensi wisata sesuka kamu
             </Typography>
-            <Typography variant="subtitle1">
+            <Typography className={classes.subtitle1}>
               4. Bergabunglah bersama komunitas yang kamu inginkan
             </Typography>
             <Button variant="outlined" className={classes.continueButton}>
@@ -175,9 +220,12 @@ export default function HomePage() {
           className={classes.howToContainer}
         >
           <Grid>
-            <Typography variant="h4">Download Aplikasi REDU</Typography>
+            <Typography className={classes.h4}>
+              Download Aplikasi REDU
+            </Typography>
             <Typography variant="subtitle1" className={classes.subtitle}>
-              Extend Access. Increase Engagement. Share your experience.
+              Extend Access. Increase Engagement. Share your{" "}
+              <span className={classes.specialText2}>experience.</span>
             </Typography>
             <Typography variant="subtitle1" className={classes.subtitle}>
               Integrate your web experience with our mobile platform.
@@ -187,7 +235,7 @@ export default function HomePage() {
             <img
               src={googlePlay}
               alt="download redu"
-              className={classes.icon}
+              className={classes.iconGP}
             />
           </Grid>
         </Grid>
@@ -226,6 +274,31 @@ export default function HomePage() {
           <div className={classes.downloadBackgroud} />
         </Grid>
       </Grid> */}
+
+      {/* community */}
+      <Grid container style={{ height: "60em" }} alignItems="center">
+        <Grid item style={{ position: "absolute", marginLeft: "5em" }}>
+          <Grid container direction="column">
+            <Grid item>
+              <Typography className={classes.h22}>Komunitas</Typography>
+              <Typography variant="subtitle2" style={{ fontSize: "1.5rem" }}>
+                Share your experiences
+              </Typography>
+              <Grid container item>
+                <Button variant="outlined" className={classes.continueButton}>
+                  <span style={{ marginRight: 5 }}>Explore</span>
+                  <ButtonArrow
+                    width={10}
+                    height={10}
+                    fill={theme.palette.primary.main}
+                  />
+                </Button>
+              </Grid>
+            </Grid>
+          </Grid>
+        </Grid>
+        <div className={classes.background}></div>
+      </Grid>
     </Grid>
   );
 }

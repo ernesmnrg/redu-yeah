@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Header from "../../components/ui/Header";
 import HomePage from "../../components/HomePage";
 import Footer from "../../components/ui/Footer";
+import SignInSide from "../../components/ui/SignInSide";
 
 export default class LandingPage extends Component {
   render() {
@@ -63,7 +64,11 @@ export default class LandingPage extends Component {
             <Route
               exact
               path="/login"
-              component={() => <div>Login</div>}
+              component={() => (
+                <div>
+                  <SignInSide />
+                </div>
+              )}
             ></Route>
             <Route
               exact
